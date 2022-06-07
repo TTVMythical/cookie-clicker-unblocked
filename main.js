@@ -1019,7 +1019,7 @@ var Game={};
 		
 		NOTE: modding API is susceptible to change and may not always function super-well
 	*/
-	Game.mods={};
+	Game.mods={"test mod"};
 	Game.sortedMods=[];
 	Game.brokenMods=[];
 	Game.modSaveData={};
