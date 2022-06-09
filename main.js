@@ -121,30 +121,6 @@ localStorageSet=function(key,str)
 	return local;
 }
 
-
-var ajax=function(url,callback)
-{
-	var httpRequest=new XMLHttpRequest();
-	if (!httpRequest){return false;}
-	httpRequest.onreadystatechange=function()
-	{
-		try{
-			if (httpRequest.readyState===XMLHttpRequest.DONE && httpRequest.status===200)
-			{
-				callback(httpRequest.responseText);
-			}
-		}catch(e){}
-	}
-	//httpRequest.onerror=function(e){console.log('ERROR',e);}
-	if (url.indexOf('?')==-1) url+='?'; else url+='&';
-	url+='nocache='+Date.now();
-	httpRequest.open('GET',url);
-	httpRequest.setRequestHeader('Content-Type','text/plain');
-	httpRequest.overrideMimeType('text/plain');
-	httpRequest.send();
-	return true;
-}
-
 function toFixed(x)
 {
 	if (Math.abs(x) < 1.0) {
